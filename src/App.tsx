@@ -14,6 +14,10 @@ import Cart from './pages/Cart';
 import authService from './services/authService';
 import './App.css';
 
+import { AdminUsers } from './pages/AdminUsers';
+import { AdminRoute } from './components/AdminRoute';
+import './App.css';
+
 function PrivateRoute({ children }: { children: JSX.Element }) {
     return authService.isAuthenticated() ? children : <Navigate to="/login" />;
 }
@@ -78,6 +82,24 @@ function App() {
                         </PrivateRoute>
                     }
                 />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <PrivateRoute>
+                            <Dashboard />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/admin/users"
+                    element={
+                        <PrivateRoute>
+                            <AdminRoute>
+                                <AdminUsers />
+                            </AdminRoute>
+                        </PrivateRoute>
+                    }
+                />  
                 <Route path="/" element={<Navigate to="/dashboard" />} />
             </Routes>
         </Router>
