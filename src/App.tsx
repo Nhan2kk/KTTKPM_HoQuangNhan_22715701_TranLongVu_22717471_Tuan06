@@ -7,6 +7,8 @@ import {
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import { AdminUsers } from "./pages/AdminUsers";
+import { AdminRoute } from "./components/AdminRoute";
 import authService from "./services/authService";
 import "./App.css";
 
@@ -47,6 +49,16 @@ function App() {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <PrivateRoute>
+              <AdminRoute>
+                <AdminUsers />
+              </AdminRoute>
             </PrivateRoute>
           }
         />

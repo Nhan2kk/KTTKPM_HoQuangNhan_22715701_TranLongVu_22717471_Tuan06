@@ -18,6 +18,10 @@ export default function Dashboard() {
     navigate("/login");
   };
 
+  const handleGoToAdmin = () => {
+    navigate("/admin/users");
+  };
+
   if (!user) {
     return <div>Loading...</div>;
   }
@@ -28,6 +32,11 @@ export default function Dashboard() {
         <h1 className="navbar-title">Mini Food Ordering</h1>
         <div className="navbar-right">
           <span className="user-name">Welcome, {user.username}!</span>
+          {user.role === "ADMIN" && (
+            <button onClick={handleGoToAdmin} className="admin-button">
+              Admin Panel
+            </button>
+          )}
           <button onClick={handleLogout} className="logout-button">
             Logout
           </button>
