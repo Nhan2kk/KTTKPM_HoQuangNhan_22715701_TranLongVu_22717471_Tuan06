@@ -1,0 +1,266 @@
+/* Food Detail Page Styles */
+.food-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #7f8c8d;
+    transform: translateX(-3px);
+}
+
+.food-detail-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.food-detail-image {
+    position: relative;
+}
+
+.food-detail-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.food-detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.food-detail-header {
+    margin-bottom: 1.5rem;
+}
+
+.food-detail-header h1 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.food-category {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.food-description {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+}
+
+.food-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.detail-value.price {
+    font-size: 2rem;
+    color: #e74c3c;
+}
+
+.food-quantity-section {
+    margin: 2rem 0;
+}
+
+.food-quantity-section label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 0.5rem;
+    width: fit-content;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.qty-btn:hover {
+    background-color: #f0f0f0;
+    color: #5568d3;
+}
+
+.qty-input {
+    width: 60px;
+    height: 40px;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.qty-input:focus {
+    outline: none;
+}
+
+.food-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.food-actions .btn {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.food-actions .btn-primary {
+    background-color: #27ae60;
+    color: white;
+}
+
+.food-actions .btn-primary:hover:not(:disabled) {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+}
+
+.food-actions .btn-primary:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.food-actions .btn-secondary {
+    background-color: #3498db;
+    color: white;
+}
+
+.food-actions .btn-secondary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.error-message {
+    background-color: #fadbd8;
+    color: #c0392b;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #e74c3c;
+}
+
+.error {
+    color: #c0392b;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .food-detail-container {
+        padding: 1rem;
+    }
+
+    .food-detail-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .food-detail-header h1 {
+        font-size: 2rem;
+    }
+
+    .detail-value.price {
+        font-size: 1.8rem;
+    }
+
+    .food-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-actions {
+        flex-direction: column;
+    }
+
+    .food-actions .btn {
+        width: 100%;
+    }
+}

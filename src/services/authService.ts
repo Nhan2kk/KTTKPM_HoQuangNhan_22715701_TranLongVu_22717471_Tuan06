@@ -1,6 +1,7 @@
+
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8081/api/users";
+const API_BASE_URL = 'http://172.28.41.112:8081/api/users';
 
 export interface LoginRequest {
   username: string;
