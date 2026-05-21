@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Mini Food Ordering System - UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Giao diện cho hệ thống đặt món ăn nội bộ theo kiến trúc dịch vụ (ShopeeFood mini). UI gọi REST API từ các service backend để xử lý đăng nhập, xem món, giỏ hàng, đặt hàng và thanh toán.
 
-Currently, two official plugins are available:
+## Thành viên
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Trần Long Vũ (22717471)
+- Hồ Quang Nhân (22715701)
 
-## React Compiler
+## Tính năng
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Xác thực: đăng ký, đăng nhập
+- Danh sách món: xem menu
+- Giỏ hàng: thêm/xóa món
+- Đơn hàng: tạo đơn
+- Thanh toán: chọn COD hoặc Banking và cập nhật trạng thái
+- Thông báo: hiển thị trạng thái thành công sau thanh toán
 
-## Expanding the ESLint configuration
+## Công nghệ
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ReactJS + TypeScript
+- Vite
+- Axios
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Cấu trúc dự án
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Pages: login, register, dashboard, admin users
+- Components: food list, cart, checkout, notifications
+- Services: auth, food, order, payment, admin
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Cài đặt
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Chạy
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+## Ghi chú
+
+- Cấu hình base URL trong các service frontend trỏ đến IP LAN thật của backend.
+- Không dùng localhost chéo máy; cấu hình CORS phía backend để cho phép host của UI.
